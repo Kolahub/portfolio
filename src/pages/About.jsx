@@ -684,8 +684,9 @@ const About = () => {
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src =
-                          "https://maps.googleapis.com/maps/api/staticmap?center=Lagos,Nigeria&zoom=12&size=600x400&maptype=roadmap&markers=color:red%7CLagos,Nigeria&key=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw";
+                        e.target.src = `https://maps.googleapis.com/maps/api/staticmap?center=Lagos,Nigeria&zoom=12&size=600x400&maptype=roadmap&markers=color:red%7CLagos,Nigeria&key=${
+                          import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+                        }`;
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-[5]">

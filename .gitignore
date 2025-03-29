@@ -57,3 +57,5 @@ server-dist
 *.tsbuildinfo
 next-env.d.ts
 .qodo
+
+.vercel

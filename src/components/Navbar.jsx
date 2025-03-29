@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence, useDragControls } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 import {
@@ -24,7 +24,7 @@ const ThemeToggle = ({ className = "" }) => {
   return (
     <motion.button
       onClick={toggleTheme}
-      className={`relative overflow-hidden rounded-full transition-all focus:outline-none ${className}`}
+      className={`relative overflow-hidden rounded-full focus:outline-none ${className}`}
       aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0 }}
@@ -32,30 +32,59 @@ const ThemeToggle = ({ className = "" }) => {
       transition={{ duration: 0.2 }}
     >
       <div className="h-10 w-20 rounded-full bg-gray-100 dark:bg-gray-800 p-1.5 relative">
-        {/* Sliding circle */}
+        {/* 3D Sliding circle with shadow */}
         <motion.div
-          className="absolute h-7 w-7 rounded-full bg-white shadow-md left-1.5"
-          animate={{ x: isDarkMode ? 36 : 0 }}
-          transition={{ type: "spring", stiffness: 500, damping: 30 }}
+          className="absolute h-7 w-7 rounded-full bg-white z-10"
+          animate={{
+            x: isDarkMode ? 40 : 0,
+            rotateY: isDarkMode ? 180 : 0,
+            scale: 1.1,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 500,
+            damping: 30,
+            scale: { duration: 0.1 },
+          }}
+          style={{
+            boxShadow: "0px 2px 8px rgba(0,0,0,0.2)",
+          }}
         />
 
-        {/* Sun icon - absolutely positioned */}
-        <div className="absolute left-1.5 top-1.5 h-7 w-7 flex items-center justify-center">
+        {/* Sun icon with dynamic scaling */}
+        <motion.div
+          className="absolute left-1.5 top-1.5 h-7 w-7 flex items-center justify-center z-20"
+          animate={{
+            scale: isDarkMode ? 0.9 : 1.1,
+            opacity: isDarkMode ? 0.7 : 1,
+          }}
+          transition={{ type: "spring", stiffness: 500 }}
+        >
           <FiSun
-            className={`h-5 w-5 ${
+            className={`h-5 w-5 transition-colors ${
               isDarkMode ? "text-gray-400" : "text-amber-500"
             }`}
           />
-        </div>
+        </motion.div>
 
-        {/* Moon icon - absolutely positioned */}
-        <div className="absolute right-1.5 top-1.5 h-7 w-7 flex items-center justify-center">
+        {/* Moon icon with dynamic scaling */}
+        <motion.div
+          className="absolute right-1.5 top-1.5 h-7 w-7 flex items-center justify-center z-20"
+          animate={{
+            scale: isDarkMode ? 1.1 : 0.9,
+            opacity: isDarkMode ? 1 : 0.7,
+          }}
+          transition={{ type: "spring", stiffness: 500 }}
+        >
           <FiMoon
-            className={`h-5 w-5 ${
+            className={`h-5 w-5 transition-colors ${
               isDarkMode ? "text-violet-400" : "text-gray-400"
             }`}
           />
-        </div>
+        </motion.div>
+
+        {/* 3D groove effect */}
+        <div className="absolute inset-0 rounded-full border border-black/10 dark:border-white/10" />
       </div>
     </motion.button>
   );
@@ -66,8 +95,23 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { isDarkMode } = useTheme();
   const location = useLocation();
+  const navigate = useNavigate();
   const navRef = useRef(null);
   const dragControls = useDragControls();
+  const [pendingNavigation, setPendingNavigation] = useState(null);
+
+  // Handle navigation with animation complete
+  const handleNavigation = (path) => {
+    setPendingNavigation(path);
+    setIsOpen(false);
+  };
+
+  const handleAnimationComplete = () => {
+    if (pendingNavigation) {
+      navigate(pendingNavigation);
+      setPendingNavigation(null);
+    }
+  };
 
   // Handle scroll effect
   useEffect(() => {
@@ -231,7 +275,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[999] transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-[999] transition-all duration-300 lg ${
         scrolled
           ? "py-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm"
           : "py-5 bg-transparent"
@@ -322,11 +366,11 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Overlay & Drawer */}
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={handleAnimationComplete}>
         {isOpen && (
           <>
             {/* Backdrop Overlay */}
-      <motion.div
+            <motion.div
               className="md:hidden fixed inset-0 bg-black/50 z-[55] backdrop-blur-sm"
               initial="closed"
               animate="open"
@@ -378,7 +422,10 @@ const Navbar = () => {
               <div className="p-5 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
                 <Link
                   to="/"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation("/");
+                  }}
                   className="text-xl font-bold flex items-center"
                 >
                   <span className="text-violet-600 dark:text-violet-500">
@@ -421,10 +468,13 @@ const Navbar = () => {
                         variants={itemVariants}
                         custom={index}
                       >
-            <NavLink
-              to={link.path}
-                          onClick={() => setIsOpen(false)}
-              className={({ isActive }) => `
+                        <NavLink
+                          to={link.path}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleNavigation(link.path);
+                          }}
+                          className={({ isActive }) => `
                             flex items-center justify-between p-3 rounded-xl transition-all active:bg-gray-100 dark:active:bg-gray-800 touch-manipulation
                 ${
                   isActive
@@ -458,7 +508,7 @@ const Navbar = () => {
                               )}
                             </>
                           )}
-            </NavLink>
+                        </NavLink>
                       </motion.div>
                     ))}
 
@@ -508,7 +558,10 @@ const Navbar = () => {
 
                     <Link
                       to="/contact"
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavigation("/contact");
+                      }}
                       className="w-full py-2.5 px-4 bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-700 hover:to-blue-700 text-white rounded-lg font-medium text-center flex items-center justify-center gap-2 shadow-sm hover:shadow transition-all active:scale-[0.98]"
                     >
                       <FiMail size={16} />
@@ -527,8 +580,8 @@ const Navbar = () => {
                     </p>
                   </motion.div>
                 </div>
-        </div>
-      </motion.div>
+              </div>
+            </motion.div>
           </>
         )}
       </AnimatePresence>

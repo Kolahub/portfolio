@@ -106,33 +106,31 @@ const sampleProjects = [
   },
   {
     id: "project-3",
-    title: "REST Countries API with theme switcher",
+    title: "Todo web app",
     description:
-      "An application that integrates with the REST Countries API to display information about countries around the world. Features include search, filtering by region, and a dark/light mode toggle.",
+      "A full-stack Todo web app with features like adding, deleting, and updating todos. Built with javaScript and styled with bootstrap CSS.",
     fullDescription:
-      "This application integrates with the REST Countries API to provide comprehensive information about countries worldwide. Users can search for specific countries, filter by regions, and view detailed information about each country. The application also features a dark/light mode toggle for comfortable viewing in different lighting conditions.",
+      "This Todo web app is a comprehensive platform for users to add, delete, update, drag and drop their todos. The application features a responsive design to ensure optimal viewing experience across all devices, from mobile phones to desktop computers.",
     keyFeatures: [
-      "Integration with REST Countries API",
-      "Search functionality to find specific countries",
-      "Regional filtering to narrow down results",
-      "Detailed country information pages",
-      "Dark/light mode toggle for user preference",
-      "Responsive design for all screen sizes",
+      "Add new todos to the list",
+      "Mark todos as complete",
+      "Delete todos from the list",
+      "Filter by all/active/complete todos",
+      "Clear all completed todos",
+      "Toggle light and dark mode",
     ],
     challenges:
-      "Working with external API data required careful handling of asynchronous operations and proper error management. Implementing the theme switcher also required a comprehensive approach to styling to ensure all components responded correctly to theme changes.",
+      "The main challenge was to implement the drag and drop functionality. I also had to ensure the todos are persistent across sessions. ",
     image: {
-      img1: "/images/countriesimg1.jpg",
-      img2: "/images/countriesimg2.jpg",
-      img3: "/images/countriesimg3.jpg",
+      img1: "/images/todoimg1.jpg",
+      img2: "/images/todoimg2.jpg",
+      img3: "/images/todoimg3.jpg",
     },
-    technologies: ["JavaScript", "CSS", "REST API"],
-    github:
-      "https://github.com/AyofeHoC/REST-Countries-API-with-color-theme-switcher",
-    liveDemo:
-      "https://rest-countries-api-with-color-theme-switcher-teal.vercel.app/",
-    category: "API Integration",
-    date: "2023",
+    technologies: ["javaScript", "Bootstrap CSS", "Firebase"],
+    github: "https://github.com/Kolahub/todo-appv1.1",
+    liveDemo: "https://kolahub.github.io/todo-appv1.1/",
+    category: "Web App",
+    date: "2024",
     client: "Personal Project",
     featured: true,
   },
@@ -163,6 +161,38 @@ const sampleProjects = [
     date: "2023",
     client: "Personal Project",
     featured: false,
+  },
+  {
+    id: "project-5",
+    title: "REST Countries API with theme switcher",
+    description:
+      "An application that integrates with the REST Countries API to display information about countries around the world. Features include search, filtering by region, and a dark/light mode toggle.",
+    fullDescription:
+      "This application integrates with the REST Countries API to provide comprehensive information about countries worldwide. Users can search for specific countries, filter by regions, and view detailed information about each country. The application also features a dark/light mode toggle for comfortable viewing in different lighting conditions.",
+    keyFeatures: [
+      "Integration with REST Countries API",
+      "Search functionality to find specific countries",
+      "Regional filtering to narrow down results",
+      "Detailed country information pages",
+      "Dark/light mode toggle for user preference",
+      "Responsive design for all screen sizes",
+    ],
+    challenges:
+      "Working with external API data required careful handling of asynchronous operations and proper error management. Implementing the theme switcher also required a comprehensive approach to styling to ensure all components responded correctly to theme changes.",
+    image: {
+      img1: "/images/countriesimg1.jpg",
+      img2: "/images/countriesimg2.jpg",
+      img3: "/images/countriesimg3.jpg",
+    },
+    technologies: ["JavaScript", "CSS", "REST API"],
+    github:
+      "https://github.com/AyofeHoC/REST-Countries-API-with-color-theme-switcher",
+    liveDemo:
+      "https://rest-countries-api-with-color-theme-switcher-teal.vercel.app/",
+    category: "API Integration",
+    date: "2023",
+    client: "Personal Project",
+    featured: true,
   },
 ];
 

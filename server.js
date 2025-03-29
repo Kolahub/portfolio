@@ -38,11 +38,11 @@ app.post("/api/contact", async (req, res) => {
     }
 
     // Log environment variables (without sensitive info)
-    console.log("SMTP Configuration:");
-    console.log("- SMTP_HOST:", process.env.SMTP_HOST);
-    console.log("- SMTP_PORT:", process.env.SMTP_PORT);
-    console.log("- SMTP_USER:", process.env.SMTP_USER);
-    console.log("- Has SMTP_PASSWORD:", !!process.env.SMTP_PASSWORD);
+    // console.log("SMTP Configuration:");
+    // console.log("- SMTP_HOST:", process.env.SMTP_HOST);
+    // console.log("- SMTP_PORT:", process.env.SMTP_PORT);
+    // console.log("- SMTP_USER:", process.env.SMTP_USER);
+    // console.log("- Has SMTP_PASSWORD:", !!process.env.SMTP_PASSWORD);
 
     // Create email transport
     const transporter = nodemailer.createTransport({

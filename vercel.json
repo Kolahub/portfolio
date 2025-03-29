@@ -9,7 +9,6 @@
   ],
   "regions": ["iad1"],
   "env": {
-    "ATLAS_URI": "@atlas_uri",
     "PORT": "@port",
     "SMTP_USER": "@smtp-user",
     "SMTP_PASSWORD": "@smtp-password",

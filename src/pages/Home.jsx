@@ -256,7 +256,7 @@ const Home = () => {
                         />
                       </svg>
                       <span className="text-white/90">
-                        User Interface Design
+                       Backend Development
                       </span>
                     </li>
                     <li className="flex items-start gap-2">

@@ -7,14 +7,5 @@
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
   ],
-  "regions": ["iad1"],
-  "env": {
-    "SMTP_USER": "@smtp-user",
-    "SMTP_PASSWORD": "@smtp-password",
-    "SMTP_HOST": "@smtp-host",
-    "SMTP_PORT": "@smtp-port",
-    "SMTP_SECURE": "@smtp-secure",
-    "EMAIL_FROM": "@email-from",
-    "EMAIL_TO": "@email-to"
-  }
+  "regions": ["iad1"]
 }

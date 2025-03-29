@@ -9,7 +9,6 @@
   ],
   "regions": ["iad1"],
   "env": {
-    "PORT": "@port",
     "SMTP_USER": "@smtp-user",
     "SMTP_PASSWORD": "@smtp-password",
     "SMTP_HOST": "@smtp-host",

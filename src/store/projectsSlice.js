@@ -98,7 +98,7 @@ const sampleProjects = [
     },
     technologies: ["React.js", "Tailwind CSS"],
     github: "https://github.com/Kolahub/space-tourism-web-app",
-    liveDemo: "https://space-tourism-web-i5926fndu-kolahubs-projects.vercel.app/ttps://space-tourism-web-app-sigma.vercel.app/h",
+    liveDemo: "https://space-tourism-web-i5926fndu-kolahubs-projects.vercel.app/",
     category: "Website",
     date: "2024",
     client: "Personal Project",

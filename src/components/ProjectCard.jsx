@@ -17,7 +17,6 @@ const ProjectCard = ({ project, index }) => {
       key={`project-${project.id}-${location.pathname}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ y: -8 }}
     >
       <div className="relative overflow-hidden h-48 sm:h-52 md:h-56">
         <img
@@ -27,7 +26,7 @@ const ProjectCard = ({ project, index }) => {
             "/placeholder.svg?height=400&width=600"
           }
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-95"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70" />
 
@@ -99,12 +98,11 @@ const ProjectCard = ({ project, index }) => {
         </div>
       </div>
 
-      {/* Hover effect border */}
-      <motion.div
-        className="absolute inset-0 border-2 border-violet-600 dark:border-violet-500 rounded-xl pointer-events-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isHovered ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
+      {/* Simplified border effect for better performance */}
+      <div
+        className={`absolute inset-0 border-2 border-violet-600 dark:border-violet-500 rounded-xl pointer-events-none transition-opacity duration-300 ${
+          isHovered ? "opacity-100" : "opacity-0"
+        }`}
       />
     </motion.article>
   );

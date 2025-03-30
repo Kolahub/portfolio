@@ -98,7 +98,7 @@ const sampleProjects = [
     },
     technologies: ["React.js", "Tailwind CSS"],
     github: "https://github.com/Kolahub/space-tourism-web-app",
-    liveDemo: "https://space-tourism-web-app-sigma.vercel.app/",
+    liveDemo: "https://space-tourism-web-i5926fndu-kolahubs-projects.vercel.app/ttps://space-tourism-web-app-sigma.vercel.app/h",
     category: "Website",
     date: "2024",
     client: "Personal Project",
@@ -126,7 +126,7 @@ const sampleProjects = [
       img2: "/images/todoimg2.jpg",
       img3: "/images/todoimg3.jpg",
     },
-    technologies: ["javaScript", "Bootstrap CSS", "Firebase"],
+    technologies: ["javaScript", "Vanilla CSS", "Firebase"],
     github: "https://github.com/Kolahub/todo-appv1.1",
     liveDemo: "https://kolahub.github.io/todo-appv1.1/",
     category: "Web App",
@@ -168,7 +168,7 @@ const sampleProjects = [
     description:
       "An application that integrates with the REST Countries API to display information about countries around the world. Features include search, filtering by region, and a dark/light mode toggle.",
     fullDescription:
-      "This application integrates with the REST Countries API to provide comprehensive information about countries worldwide. Users can search for specific countries, filter by regions, and view detailed information about each country. The application also features a dark/light mode toggle for comfortable viewing in different lighting conditions.",
+      "This application integrates with the REST Countries API to provide comprehensive information about countries worldwide using OOP principles. Users can search for specific countries, filter by regions, and view detailed information about each country. The application also features a dark/light mode toggle for comfortable viewing in different lighting conditions.",
     keyFeatures: [
       "Integration with REST Countries API",
       "Search functionality to find specific countries",

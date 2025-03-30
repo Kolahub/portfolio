@@ -511,7 +511,7 @@ const About = () => {
                 viewport={{ once: true }}
                 className="group bg-white dark:bg-gray-800 p-0 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all overflow-hidden"
               >
-                <div className="h-3 bg-gradient-to-r from-violet-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                <div className="h-3 bg-gradient-to-r from-violet-600 to-blue-600 transform opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out"></div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-violet-600 dark:group-hover:text-violet-500 transition-colors">
                     {project.title}
@@ -552,8 +552,8 @@ const About = () => {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all group overflow-hidden relative"
               >
-                <div className="absolute -right-6 -top-6 w-12 h-12 bg-violet-500/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
-                <div className="absolute -left-6 -bottom-6 w-12 h-12 bg-blue-500/10 rounded-full group-hover:scale-150 transition-transform duration-500 delay-100"></div>
+                <div className="absolute -right-6 -top-6 w-12 h-12 bg-violet-500/10 rounded-full transform transition-transform duration-500 translate-x-0 translate-y-0 group-hover:translate-x-1 group-hover:translate-y-1"></div>
+                <div className="absolute -left-6 -bottom-6 w-12 h-12 bg-blue-500/10 rounded-full transform transition-transform duration-500 translate-x-0 translate-y-0 group-hover:translate-x-1 group-hover:translate-y-1"></div>
 
                 <div className="text-3xl text-gradient-to-r from-violet-600 to-blue-600 dark:from-violet-500 dark:to-blue-500 mb-4 bg-gray-100 dark:bg-gray-700 p-3 rounded-lg inline-block">
                   {service.icon}

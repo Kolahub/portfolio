@@ -44,19 +44,19 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <FiGithub className="text-xl" />,
-      url: "https://github.com/AyofeHoC",
+      url: "https://github.com/Kolahub/Y-Combinator-landing-page-clone",
       label: "GitHub",
       bg: "bg-gray-800 hover:bg-gray-700"
     },
     {
       icon: <FiLinkedin className="text-xl" />,
-      url: "https://linkedin.com/in/faheez-ayofe-a73b06281",
+      url: "https://www.linkedin.com/in/faheez-ayofe-13049725b/",
       label: "LinkedIn",
       bg: "bg-blue-600 hover:bg-blue-700"
     },
     { 
       icon: <FiTwitter className="text-xl" />, 
-      url: "https://twitter.com/ayofe_hoc", 
+      url: "https://x.com/AdekolaFaheez", 
       label: "X (Twitter)",
       bg: "bg-black hover:bg-gray-800"
     },

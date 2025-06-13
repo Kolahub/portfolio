@@ -48,6 +48,94 @@ export const fetchProjectById = createAsyncThunk(
 const sampleProjects = [
   {
     id: "project-1",
+    title: "Invoice Web App",
+    description:
+      "A full-stack invoice management application built with the MERN stack. Includes dynamic invoice creation, status updates, and persistent theme state.",
+    fullDescription:
+      "The Invoice App is a full-stack application built with MongoDB, Express, React, and Node.js. I used React Router for client-side routing and TanStack Query to handle data fetching, caching, and syncing. The app allows users to create, edit, and delete invoices, with state management ensuring responsiveness. It includes theme state persistence without authentication.",
+    keyFeatures: [
+      "CRUD operations for invoices",
+      "Filter invoices by status (Paid, Pending, Draft)",
+      "TanStack Query for efficient data handling",
+      "Theme toggle with MERN persistence",
+      "Responsive design across all screen sizes",
+    ],
+    challenges:
+      "A major challenge was maintaining client-side state in sync with the server using TanStack Query, especially while keeping the theme persistent across reloads without using authentication.",
+    image: {
+      img1: "/images/invoice1.jpg",
+      img2: "/images/invoice2.jpg",
+      img3: "/images/invoice3.jpg",
+    },
+    technologies: ["React.js", "MongoDB", "Express", "Node.js", "TanStack Query", "Tailwind CSS"],
+    github: "https://github.com/Kolahub/invoice-web-app",
+    liveDemo: "https://invoice-web-app-chi.vercel.app/",
+    category: "Web App",
+    date: "2025",
+    client: "Personal Project",
+    featured: true,
+  },
+
+  {
+    id: "project-2",
+    title: "DevJobs Web App",
+    description:
+      "A job board web app built with Next.js, featuring job listings, detailed job views, and filtering by location and role. Designed to be fully responsive and accessible.",
+    fullDescription:
+      "DevJobs is a frontend project I built using Next.js to practice server-side rendering and file-based routing. It showcases job listings with detailed views and allows users to filter jobs by title, location, and contract type. I focused on dynamic routing, responsive layouts, and integrating mock JSON data efficiently.",
+    keyFeatures: [
+      "Built with Next.js for static generation and routing",
+      "Dynamic filtering by job role, location, and contract type",
+      "Responsive layout for desktop and mobile devices",
+      "Theme toggle with persisted state using localStorage",
+      "Animated UI using Framer Motion",
+    ],
+    challenges:
+      "Managing filter state efficiently across components and ensuring accurate job filtering.",
+    image: {
+      img1: "/images/devjobs1.jpg",
+      img2: "/images/devjobs2.jpg",
+      img3: "/images/devjobs3.jpg",
+    },
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/Kolahub/job-board",
+    liveDemo: "https://devjobs-kola.vercel.app/",
+    category: "Web App",
+    date: "2025",
+    client: "Personal Project",
+    featured: true,
+  },
+  
+  {
+    id: "project-3",
+    title: "Audiophile e-commerce website",
+    description:
+      "A fully functional e-commerce website for audio products with features like product browsing, shopping cart, and checkout process. Built with React and styled with Tailwind CSS.",
+    fullDescription:
+      "The Audiophile e-commerce website is a comprehensive platform for audio enthusiasts to browse and purchase high-quality audio gear. Built with React and styled with Tailwind CSS, the website is both visually appealing and highly functional.",
+    keyFeatures: [
+      "Complete product catalog with detailed product pages",
+      "Shopping cart functionality",
+      "Form validation",
+      "Order summary with pricing breakdown",
+    ],
+    challenges:
+      "Implementing a robust e-commerce experience required careful state management using Context API to handle the shopping cart. The checkout process was also challenging to ensure a good balance between user experience and data integrity.",
+    image: {
+      img1: "/images/audioimg1.png",
+      img2: "/images/audioimg2.png",
+      img3: "/images/audioimg3.png",
+    },
+    technologies: ["React.js", "Tailwind CSS", "Context API"],
+    github: "https://github.com/Kolahub/Audiophile-e-commerce-web",
+    liveDemo: "https://audiophile-e-commerce-web.vercel.app/",
+    category: "E-Commerce",
+    date: "2024",
+    client: "Personal Project",
+    featured: true,
+  },
+  {
+    id: "project-4",
     title: "Entertainment web app",
     description:
       "A full-stack entertainment web app with features like bookmarking, search functionality, and responsive design. The app allows users to browse movies and TV series with an intuitive interface.",
@@ -73,39 +161,10 @@ const sampleProjects = [
     category: "Web App",
     date: "2024",
     client: "Personal Project",
-    featured: true,
+    featured: false,
   },
   {
-    id: "project-2",
-    title: "Space tourism multi-page website",
-    description:
-      "A multi-page website for a fictional space tourism company with tab-based navigation to display information about destinations, crew, and technology used for space travel.",
-    fullDescription:
-      "This Space Tourism website showcases information about different space destinations, crew members, and technologies for a fictional space tourism company. Built with React and styled using Tailwind CSS, it features a tab-based navigation system that allows users to view different categories of content in an intuitive way.",
-    keyFeatures: [
-      "Multi-page layout with smooth transitions",
-      "Tab-based navigation for content categories",
-      "Responsive design optimized for all device sizes",
-      "Interactive UI elements and animations",
-      "Accessibility considerations for all users",
-    ],
-    challenges:
-      "The main challenge in this project was creating a smooth, intuitive tab-based navigation system that worked seamlessly across both desktop and mobile interfaces. I also focused on implementing elegant animations and transitions to enhance the user experience without compromising on performance.",
-    image: {
-      img1: "/images/spaceimg1.png",
-      img2: "/images/spaceimg2.png",
-      img3: "/images/spaceimg3.png",
-    },
-    technologies: ["React.js", "Tailwind CSS"],
-    github: "https://github.com/Kolahub/space-tourism-web-app",
-    liveDemo: "https://space-tourism-web-i5926fndu-kolahubs-projects.vercel.app/",
-    category: "Website",
-    date: "2024",
-    client: "Personal Project",
-    featured: true,
-  },
-  {
-    id: "project-3",
+    id: "project-5",
     title: "Todo web app",
     description:
       "A full-stack Todo web app with features like adding, deleting, and updating todos. Built with javaScript and styled with bootstrap CSS.",
@@ -132,38 +191,39 @@ const sampleProjects = [
     category: "Web App",
     date: "2024",
     client: "Personal Project",
-    featured: true,
-  },
-  {
-    id: "project-4",
-    title: "Audiophile e-commerce website",
-    description:
-      "A fully functional e-commerce website for audio products with features like product browsing, shopping cart, and checkout process. Built with React and styled with Tailwind CSS.",
-    fullDescription:
-      "The Audiophile e-commerce website is a comprehensive platform for audio enthusiasts to browse and purchase high-quality audio gear. Built with React and styled with Tailwind CSS, the website is both visually appealing and highly functional.",
-    keyFeatures: [
-      "Complete product catalog with detailed product pages",
-      "Shopping cart functionality",
-      "Form validation",
-      "Order summary with pricing breakdown",
-    ],
-    challenges:
-      "Implementing a robust e-commerce experience required careful state management using Context API to handle the shopping cart. The checkout process was also challenging to ensure a good balance between user experience and data integrity.",
-    image: {
-      img1: "/images/audioimg1.png",
-      img2: "/images/audioimg2.png",
-      img3: "/images/audioimg3.png",
-    },
-    technologies: ["React.js", "Tailwind CSS", "Context API"],
-    github: "https://github.com/Kolahub/Audiophile-e-commerce-web",
-    liveDemo: "https://audiophile-e-commerce-web.vercel.app/",
-    category: "E-Commerce",
-    date: "2024",
-    client: "Personal Project",
     featured: false,
   },
   {
-    id: "project-5",
+    id: "project-6",
+    title: "Space tourism multi-page website",
+    description:
+      "A multi-page website for a fictional space tourism company with tab-based navigation to display information about destinations, crew, and technology used for space travel.",
+    fullDescription:
+      "This Space Tourism website showcases information about different space destinations, crew members, and technologies for a fictional space tourism company. Built with React and styled using Tailwind CSS, it features a tab-based navigation system that allows users to view different categories of content in an intuitive way.",
+    keyFeatures: [
+      "Multi-page layout with smooth transitions",
+      "Tab-based navigation for content categories",
+      "Responsive design optimized for all device sizes",
+      "Interactive UI elements and animations",
+      "Accessibility considerations for all users",
+    ],
+    challenges:
+      "The main challenge in this project was creating a smooth, intuitive tab-based navigation system that worked seamlessly across both desktop and mobile interfaces. I also focused on implementing elegant animations and transitions to enhance the user experience without compromising on performance.",
+    image: {
+      img1: "/images/spaceimg1.png",
+      img2: "/images/spaceimg2.png",
+      img3: "/images/spaceimg3.png",
+    },
+    technologies: ["React.js", "Tailwind CSS"],
+    github: "https://github.com/Kolahub/space-tourism-web-app",
+    liveDemo: "https://space-tourism-web-app-kola.vercel.app/",
+    category: "Website",
+    date: "2024",
+    client: "Personal Project",
+    featured: true,
+  },
+  {
+    id: "project-7",
     title: "REST Countries API with theme switcher",
     description:
       "An application that integrates with the REST Countries API to display information about countries around the world. Features include search, filtering by region, and a dark/light mode toggle.",
@@ -194,6 +254,35 @@ const sampleProjects = [
     client: "Personal Project",
     featured: true,
   },
+  {
+    id: "project-8",
+    title: "Y Combinator Landing Page Clone",
+    description:
+      "A responsive landing page clone of Y Combinator built with semantic HTML and Sass. It features dropdown menus, grid layouts, responsive typography, and animation effects.",
+    fullDescription:
+      "This is a pixel-perfect clone of the official Y Combinator landing page. I recreated the full layout and interaction using only HTML and Sass, focusing on semantic markup, BEM naming conventions, and responsiveness. The clone includes interactive dropdowns, media sections, and mobile navigation with smooth transitions.",
+    keyFeatures: [
+      "Fully responsive design using media queries",
+      "BEM-based Sass architecture for maintainable styles",
+      "Interactive dropdown navigation with hover and mobile toggle",
+      "Semantic HTML structure with accessibility in mind",
+      "CSS animations for tooltips and mobile nav transitions",
+    ],
+    challenges:
+      "Creating a navigation system that works well across screen sizes with pure HTML and Sass. Managing layout responsiveness while keeping the design true to the original was a fun and educational challenge.",
+    image: {
+      img1: "/images/ycombinator-clone-1.png",
+      img2: "/images/ycombinator-clone-2.png",
+      img3: "/images/ycombinator-clone-3.png",
+    },
+    technologies: ["HTML5", "Sass", "CSS3"],
+    github: "https://github.com/Kolahub/Y-Combinator-landing-page-clone",
+    liveDemo: "https://y-combinator-landing-page-clone.vercel.app/",
+    category: "Web Clone",
+    date: "2024",
+    client: "Practice Project",
+    featured: false,
+  },  
 ];
 
 const initialState = {

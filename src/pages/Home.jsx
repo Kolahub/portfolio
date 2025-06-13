@@ -117,53 +117,51 @@ const Home = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="space-y-5 sm:space-y-6"
-              >
-                <SectionHeading title="About Me" centered={false} />
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7, delay: 0.2 }}
+  className="space-y-5 sm:space-y-6"
+>
+  <SectionHeading title="About Me" centered={false} />
 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl"
-                >
-                  A collection of my recent work, showing my skills in frontend
-                  development, responsive implementation, and UI implementation.
-                </motion.p>
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.1 }}
+    className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl"
+  >
+    A showcase of my recent projects highlighting my strengths in frontend
+    development, responsive design, and clean UI implementation.
+  </motion.p>
 
-                <p className="text-gray-600 dark:text-gray-400">
-                  Skilled frontend developer with nearly 2 years of experience
-                  in web development. Proficient in React and Tailwind CSS, with
-                  experience implementing UI designs from Figma.
-                </p>
+  <p className="text-gray-600 dark:text-gray-400">
+    Frontend developer with 3 years of experience building modern web apps using
+    React, Next.js, Tailwind CSS, and TanStack Query. Skilled at turning Figma designs
+    into polished, accessible UIs.
+  </p>
 
-                <p className="text-gray-600 dark:text-gray-400">
-                  <span className="text-violet-600 dark:text-violet-500 font-medium">
-                    Knowledgeable in backend technologies such as Firebase,
-                    Supabase, Node js. Passionate about building responsive and
-                    optimized web applications.
-                  </span>{" "}
-                  Committed to continuous learning and implementing best
-                  practices in modern web development.
-                </p>
+  <p className="text-gray-600 dark:text-gray-400">
+    <span className="text-violet-600 dark:text-violet-500 font-medium">
+      Familiar with backend tools like Firebase, Supabase, and Node.js.
+    </span>{" "}
+    Focused on performance, scalability, and continuous learning.
+  </p>
 
-                <motion.div
-                  className="mt-6 sm:mt-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  <Link
-                    to="/about"
-                    className="inline-flex items-center gap-2 text-violet-600 dark:text-violet-500 hover:text-violet-700 dark:hover:text-violet-400 font-medium transition-colors"
-                  >
-                    Learn more about me <FiArrowRight />
-                  </Link>
-                </motion.div>
-              </motion.div>
+  <motion.div
+    className="mt-6 sm:mt-8"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.4 }}
+  >
+    <Link
+      to="/about"
+      className="inline-flex items-center gap-2 text-violet-600 dark:text-violet-500 hover:text-violet-700 dark:hover:text-violet-400 font-medium transition-colors"
+    >
+      Learn more about me <FiArrowRight />
+    </Link>
+  </motion.div>
+</motion.div>
+
             </div>
           </div>
         </section>

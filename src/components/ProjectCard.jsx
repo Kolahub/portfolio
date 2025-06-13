@@ -77,10 +77,10 @@ const ProjectCard = ({ project, index }) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-500 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-500 transition-colors p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full"
                 aria-label="GitHub Repository"
               >
-                <FiGithub />
+                <FiGithub className="w-5 h-5" />
               </a>
             )}
             {project.liveDemo && (
@@ -88,10 +88,10 @@ const ProjectCard = ({ project, index }) => {
                 href={project.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-500 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-500 transition-colors p-1.5 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full"
                 aria-label="Live Demo"
               >
-                <FiExternalLink />
+                <FiExternalLink className="w-5 h-5" />
               </a>
             )}
           </div>

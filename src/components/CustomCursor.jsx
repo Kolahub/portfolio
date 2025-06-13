@@ -65,20 +65,22 @@ const CustomCursor = () => {
         ? "1px solid rgba(255, 255, 255, 0.3)"
         : "1px solid rgba(0, 0, 0, 0.3)",
       transition: {
-        type: "spring",
-        mass: 0.6,
+        type: "tween",
+        duration: 0.1,
+        ease: "linear"
       },
     },
     hover: {
-      x: mousePosition.x - 24,
-      y: mousePosition.y - 24,
-      height: 48,
-      width: 48,
+      x: mousePosition.x - 20,
+      y: mousePosition.y - 20,
+      height: 40,
+      width: 40,
       backgroundColor: "rgba(124, 58, 237, 0.2)",
       border: "1px solid rgba(124, 58, 237, 0.6)",
       transition: {
-        type: "spring",
-        mass: 0.6,
+        type: "tween",
+        duration: 0.15,
+        ease: "easeOut"
       },
     },
     click: {
@@ -89,9 +91,9 @@ const CustomCursor = () => {
       backgroundColor: "rgba(124, 58, 237, 0.4)",
       border: "1px solid rgba(124, 58, 237, 0.8)",
       transition: {
-        type: "spring",
-        mass: 0.6,
-        damping: 20,
+        type: "tween",
+        duration: 0.1,
+        ease: "easeOut"
       },
     },
   };

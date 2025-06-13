@@ -54,30 +54,31 @@ const About = () => {
 
   const projects = [
     {
-      title: "Entertainment web app",
-      technologies: "React.js, Tailwind CSS, Firebase",
+      title: "StudyBuddy – Adaptive Learning Platform",
+      technologies: "Next.js, Tailwind CSS, OpenAI API",
       description:
-        "A full-stack entertainment web app with features like bookmarking, search functionality, and responsive design. The app allows users to browse movies and TV series with an intuitive interface.",
-    },
-    {
-      title: "Space tourism multi-page website",
-      technologies: "React.js, Tailwind CSS",
-      description:
-        "A multi-page website for a fictional space tourism company with tab-based navigation to display information about destinations, crew, and technology used for space travel.",
-    },
-    {
-      title: "REST Countries API with theme switcher",
-      technologies: "JavaScript, CSS, REST API",
-      description:
-        "An application that integrates with the REST Countries API to display information about countries around the world. Features include search, filtering by region, and a dark/light mode toggle.",
+        "Final year project: an AI-powered platform that groups students based on their learning speed and delivers personalized content tailored to their pace. Built with Next.js and integrated with OpenAI for adaptive content delivery.",
     },
     {
       title: "Audiophile e-commerce website",
-      technologies: "React.js, Tailwind CSS, Context API",
+      technologies: "React.js, Tailwind CSS",
       description:
-        "A fully functional e-commerce website for audio products with features like product browsing, shopping cart functionality, checkout process, and responsive design for all device sizes.",
+        "A fully functional e-commerce site for audio gear, featuring product pages, a shopping cart, and a checkout flow. Designed to be responsive and accessible across all devices.",
+    },
+    {
+      title: "Invoice App",
+      technologies: "React.js, Tailwind CSS, Tanstack Query, Node.js, MongoDB",
+      description:
+        "A web application for creating, editing, and managing invoices. Includes user authentication, real-time data syncing with Firebase, and a clean UI for tracking payment statuses.",
+    },
+    {
+      title: "DevJobs Web App",
+      technologies: "Next.js, Tailwind CSS",
+      description:
+        "A job listing platform with filtering by role, location, and contract type. Built with performance in mind using SSR with Next.js and custom data fetching logic.",
     },
   ];
+  
 
   const services = [
     {
@@ -161,18 +162,14 @@ const About = () => {
               </h2>
 
               <div className="text-gray-600 dark:text-gray-400 space-y-4 mb-8 text-base md:text-lg max-w-2xl">
-                <p className="border-l-4 border-violet-500 pl-4 py-1">
-                  Skilled frontend developer with nearly 2 years of experience
-                  in web development. Proficient in React and Tailwind CSS, with
-                  experience implementing UI designs from Figma.
-                </p>
-                <p>
-                  Knowledgeable in backend technologies such as Firebase,
-                  Supabase, Node.js. Passionate about building responsive and
-                  optimized web applications. Committed to continuous learning
-                  and implementing best practices in modern web development.
-                </p>
-              </div>
+  <p className="border-l-4 border-violet-500 pl-4 py-1">
+    Frontend developer with 3 years of experience building web apps using React, Next.js, Tailwind CSS, and TanStack Query. Skilled in translating Figma designs into clean, responsive interfaces.
+  </p>
+  <p>
+    Comfortable working with backend tools like Firebase, Supabase, and Node.js. Passionate about performance, accessibility, and continuously improving with modern best practices.
+  </p>
+</div>
+
 
               <div className="flex flex-wrap gap-4">
                 <a

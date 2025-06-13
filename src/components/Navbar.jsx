@@ -343,10 +343,11 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <motion.button
-          className="md:hidden z-[60] p-2 rounded-full bg-white dark:bg-gray-800 shadow-md text-gray-700 dark:text-gray-300 focus:outline-none menu-button"
+          className="md:hidden z-[60] p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg text-gray-700 dark:text-gray-300 focus:outline-none menu-button
+                   hover:bg-white dark:hover:bg-gray-700/90 transition-colors"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          whileTap={{ scale: 0.95 }}
+          whileTap={{ scale: 0.9 }}
           variants={menuButtonVariants}
           initial="initial"
           animate="animate"
@@ -354,12 +355,13 @@ const Navbar = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={isOpen ? "close" : "menu"}
+              className="flex items-center justify-center w-6 h-6"
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </motion.div>
           </AnimatePresence>
         </motion.button>
@@ -575,7 +577,7 @@ const Navbar = () => {
                     variants={itemVariants}
                   >
                     <p>
-                      © {new Date().getFullYear()} DevFolio. All rights
+                      {new Date().getFullYear()} DevFolio. All rights
                       reserved.
                     </p>
                   </motion.div>

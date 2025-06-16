@@ -165,34 +165,36 @@ const sampleProjects = [
   },
   {
     id: "project-5",
-    title: "Todo web app",
+    title: "Todo Web App",
     description:
-      "A full-stack Todo web app with features like adding, deleting, and updating todos. Built with javaScript and styled with bootstrap CSS.",
+      "A full-stack Todo app built with JavaScript and Firebase, featuring CRUD operations and a responsive, theme-toggle interface.",
     fullDescription:
-      "This Todo web app is a comprehensive platform for users to add, delete, update, drag and drop their todos. The application features a responsive design to ensure optimal viewing experience across all devices, from mobile phones to desktop computers.",
+      "This Todo web app allows users to add, delete, update, and filter todos. It supports drag-and-drop reordering and saves todos using Firebase, ensuring data persists across sessions. The app features a light/dark mode toggle and responsive design for seamless use on all devices.",
     keyFeatures: [
       "Add new todos to the list",
       "Mark todos as complete",
       "Delete todos from the list",
       "Filter by all/active/complete todos",
       "Clear all completed todos",
+      "Drag and drop todos to reorder",
       "Toggle light and dark mode",
+      "Persistent data storage with Firebase"
     ],
     challenges:
-      "The main challenge was to implement the drag and drop functionality. I also had to ensure the todos are persistent across sessions. ",
+      "Implementing drag-and-drop functionality and integrating Firebase to ensure real-time data persistence across sessions were the key challenges.",
     image: {
       img1: "/images/todoimg1.jpg",
       img2: "/images/todoimg2.jpg",
-      img3: "/images/todoimg3.jpg",
+      img3: "/images/todoimg3.jpg"
     },
-    technologies: ["javaScript", "Vanilla CSS", "Firebase"],
+    technologies: ["JavaScript", "Bootstrap CSS", "Firebase"],
     github: "https://github.com/Kolahub/todo-appv1.1",
     liveDemo: "https://kolahub.github.io/todo-appv1.1/",
     category: "Web App",
     date: "2024",
     client: "Personal Project",
-    featured: false,
-  },
+    featured: false
+  },  
   {
     id: "project-6",
     title: "Space tourism multi-page website",

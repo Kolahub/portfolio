@@ -82,11 +82,11 @@ Frontend developer with 3 years of experience building web apps using React, Nex
                 View My Work <FiArrowRight />
               </Link>
               <a
-                href="/AyofeFaheezCV.docx"
+                href="/Kola_Frontend_Developer_CV.docx"
                 download
                 className="inline-flex items-center gap-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium py-2.5 sm:py-3 px-5 sm:px-6 rounded-lg transition-colors"
               >
-                <FiDownload /> Resume
+                <FiDownload /> CV
               </a>
             </motion.div>
 

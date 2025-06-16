@@ -6,29 +6,20 @@ import SectionHeading from "../components/SectionHeading";
 const About = () => {
   const skills = [
     {
-      category: "Languages & Frameworks",
-      items: [
-        "JavaScript (React, Redux)",
-        "HTML",
-        "CSS (Tailwind CSS, Bootstrap, Sass)",
-      ],
+      category: "Frontend Development",
+      items: ["React", "Next.js", "JavaScript", "HTML", "CSS", "Tailwind CSS"],
     },
     {
-      category: "Backend & Databases",
-      items: ["Firebase", "Supabase", "Node.js"],
+      category: "Backend & Database",
+      items: ["Firebase", "Supabase", "Node.js", "TanStack Query"],
     },
     {
       category: "Tools & Environments",
-      items: ["Visual Studio", "Visual Studio Code", "Cursor"],
+      items: ["Git", "VS Code", "RESTful APIs", "Responsive Design"],
     },
     {
-      category: "Other",
-      items: [
-        "Responsive Design",
-        "UI/UX Design Principles",
-        "Optimization",
-        "Git",
-      ],
+      category: "Other Skills",
+      items: ["UI/UX Design", "Problem Solving", "Team Collaboration"],
     },
   ];
 
@@ -39,7 +30,16 @@ const About = () => {
       period: "January 2024 - June 2024",
       description:
         "Developed and maintained multiple web projects, including website clones, a mobile emulator, and a banking web application. Gained hands-on experience in front-end and back-end development using modern web technologies. Worked on responsive web design, improving UI/UX for various applications. Collaborated with a team to debug and optimize web applications for better performance.",
+      technologies: ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"]
     },
+    {
+      title: "Frontend Developer Intern",
+      company: "Stealth Startup",
+      period: "May 2025 - Present",
+      description:
+        "Contributing to the development of a confidential web platform focused on contract and team management. Building reusable, accessible UI components aligned with a custom design system using React and Tailwind CSS. Collaborating closely with designers and backend engineers to ensure seamless integration and maintain responsive, high-performance interfaces. Gaining real-world experience with version control, code reviews, and agile development in a production environment.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Redux", "Git", "Agile"]
+    }
   ];
 
   const education = [
@@ -351,51 +351,73 @@ const About = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-1/2 left-0 w-64 h-64 bg-violet-500/5 rounded-full filter blur-2xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-blue-500/5 rounded-full filter blur-2xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4">
+      {/* Experience Section - Enhanced Design */}
+      <section className="py-16 md:py-20 relative">
+        <div className="container mx-auto px-4 max-w-4xl">
           <SectionHeading
-            title="Experience"
-            subtitle="Professional work experience"
+            title="Work Experience"
+            subtitle="Professional Journey"
           />
 
-          <div className="max-w-4xl mx-auto mt-12">
-            <div className="relative pl-8 border-l-2 border-violet-600 dark:border-violet-500 space-y-12">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  <div className="absolute -left-[41px] h-8 w-8 rounded-full bg-gradient-to-br from-violet-600 to-blue-600 dark:from-violet-500 dark:to-blue-500 flex items-center justify-center shadow-md">
-                    <span className="h-4 w-4 rounded-full bg-white"></span>
+          <div className="mt-12 md:mt-16 relative">
+            {/* Vertical line - Hidden on mobile, visible on md+ */}
+            <div className="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-violet-500 to-blue-500 -translate-x-1/2"></div>
+            
+            <div className="space-y-8 md:space-y-12">
+              {experiences.map((exp, index) => {
+                const isEven = index % 2 === 0;
+                const isLast = index === experiences.length - 1;
+                
+                return (
+                  <div key={index} className="relative group">
+                    {/* Dot - Always on left for mobile, centered for desktop */}
+                    <div className="absolute left-0 md:left-1/2 top-6 md:top-1/2 w-3 h-3 rounded-full bg-gradient-to-br from-violet-500 to-blue-500 ring-4 ring-white dark:ring-gray-900 z-10 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        duration: 0.4,
+                        ease: [0.25, 0.1, 0.25, 1]
+                      }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      className={`relative md:w-[calc(50%-24px)] ml-8 md:ml-0 ${isEven ? 'md:mr-auto md:pr-8' : 'md:ml-auto md:pl-8'}`}
+                    >
+                      {/* Date - Always above card on mobile */}
+                      <div className="mb-3 md:mb-4">
+                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                          {exp.period}
+                        </p>
+                      </div>
+                      
+
+                      {/* Card */}
+                      <div className={`bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-100 dark:border-gray-700/50 
+                        transition-all duration-300 hover:shadow-lg hover:border-violet-100 dark:hover:border-violet-900/30`}>
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+                              {exp.title}
+                            </h3>
+                            <h4 className="text-base md:text-lg font-medium text-violet-600 dark:text-violet-400 mt-0.5">
+                              {exp.company}
+                            </h4>
+                          </div>
+                          {isLast && (
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400">
+                              Current
+                            </span>
+                          )}
+                        </div>
+                        
+                        <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
+                          {exp.description}
+                        </p>
+                      </div>
+                    </motion.div>
                   </div>
-                  <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
-                    <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                        {exp.title}
-                      </h3>
-                      <span className="inline-block px-4 py-1 text-sm font-medium bg-gradient-to-r from-violet-100 to-blue-100 dark:from-violet-900/60 dark:to-blue-900/60 text-violet-800 dark:text-violet-300 rounded-full shadow-sm">
-                        {exp.period}
-                      </span>
-                    </div>
-                    <h4 className="text-lg font-medium text-violet-600 dark:text-violet-500 mb-4">
-                      {exp.company}
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {exp.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -584,7 +606,7 @@ const About = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-800/50 p-6 rounded-lg"
+                  className="bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-800/50 rounded-lg"
                 >
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
                     <span className="inline-block w-1 h-8 bg-gradient-to-b from-violet-600 to-blue-600 mr-3 rounded-sm"></span>

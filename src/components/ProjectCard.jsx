@@ -1,22 +1,40 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink, FiArrowRight } from "react-icons/fi";
+import { useInView } from "framer-motion";
 
 const ProjectCard = ({ project, index }) => {
   const [isHovered, setIsHovered] = useState(false);
   const location = useLocation();
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.6,
+          delay: index * 0.05,
+          ease: [0.16, 1, 0.3, 1], // Custom easing for smoother animation
+        },
+      });
+    }
+  }, [isInView, controls, index]);
 
   return (
     <motion.article
-      className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
+      ref={ref}
+      className="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full transform-gpu"
+      initial={{ opacity: 0, y: 20 }}
+      animate={controls}
       key={`project-${project.id}-${location.pathname}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      style={{ willChange: 'transform, opacity' }}
     >
       <div className="relative overflow-hidden h-48 sm:h-52 md:h-56">
         <img

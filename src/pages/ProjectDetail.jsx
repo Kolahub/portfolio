@@ -225,7 +225,7 @@ const ProjectDetail = () => {
                   {currentProject.fullDescription || currentProject.description}
                 </p>
 
-                {currentProject.challenges && (
+                {/* {currentProject.challenges && (
                   <div className="mt-8">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                       Challenges & Solutions
@@ -234,7 +234,7 @@ const ProjectDetail = () => {
                       {currentProject.challenges}
                     </p>
                   </div>
-                )}
+                )} */}
 
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-8 mb-4">
                   Key Features
